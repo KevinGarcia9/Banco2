@@ -23,6 +23,24 @@ namespace CapaDatos
             return dtMostrarClientes;
         }
 
+        public void MtAgregarClientes(String Nombre, String Direccion, String Departamento, 
+            String Pais, String Categoria, String Estado) 
+        { 
+            
+            string usp_Insertar = "usp_clientes_crear";
+            SqlCommand cmd_InsertarClientes = new SqlCommand(usp_Insertar,db_conexion.MtdAbrirConexion());
+
+            cmd_InsertarClientes.CommandType = CommandType.StoredProcedure;
+            cmd_InsertarClientes.Parameters.AddWithValue("@Nombre", Nombre);
+            cmd_InsertarClientes.Parameters.AddWithValue("@Direccion", Direccion);
+            cmd_InsertarClientes.Parameters.AddWithValue("@Departamento", Departamento);
+            cmd_InsertarClientes.Parameters.AddWithValue("@Pais", Pais);
+            cmd_InsertarClientes.Parameters.AddWithValue("@Categoria", Categoria);
+            cmd_InsertarClientes.Parameters.AddWithValue("@Estado", Estado);
+            cmd_InsertarClientes.ExecuteNonQuery();
+
+        }
+
 
     }
 }

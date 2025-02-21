@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,31 @@ namespace CapaPresentacion
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            CD_Clientes cd_clientes = new CD_Clientes();
+
+            try
+            {
+                cd_clientes.MtAgregarClientes(
+                    txtNombres.Text,
+                    txtDireccion.Text,
+                    txtDepartamento.Text,
+                    txtPais.Text,
+                    cboxCategoria.Text,
+                    cboxEstado.Text);
+
+                MessageBox.Show("El Cliente se agregó con éxito", "Correcto",
+                    MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace, "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
