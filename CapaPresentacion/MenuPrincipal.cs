@@ -32,8 +32,8 @@ namespace CapaPresentacion
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            PanelSeleccion.Top = btnClientes.Top; // Ajustar la posición de altura
-            PanelSeleccion.Height = btnClientes.Height; // Ajustar el tamaño
+            PanelSeleccion.Top = btnCuentas.Top; // Ajustar la posición de altura
+            PanelSeleccion.Height = btnCuentas.Height; // Ajustar el tamaño
             PanelSeleccion.Visible=true; // hacer visible el boton
 
             FrmClientes frmClie = new FrmClientes();
@@ -62,8 +62,8 @@ namespace CapaPresentacion
 
         private void btnCuentas_Click(object sender, EventArgs e)
         {
-            PanelSeleccion.Top = btnClientes.Top; // Ajustar la posición de altura
-            PanelSeleccion.Height = btnClientes.Height; // Ajustar el tamaño
+            PanelSeleccion.Top = btnCuentas.Top; // Ajustar la posición de altura
+            PanelSeleccion.Height = btnCuentas.Height; // Ajustar el tamaño
             PanelSeleccion.Visible = true; // hacer visible el boton
 
             FrmCuentas frmCue = new FrmCuentas();

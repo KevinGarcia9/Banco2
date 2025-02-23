@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gboxClientes = new System.Windows.Forms.GroupBox();
+            this.dtpFechaApertura = new System.Windows.Forms.DateTimePicker();
+            this.cboxTipoCuenta = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
@@ -44,8 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigoCuenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboxTipoCuenta = new System.Windows.Forms.ComboBox();
-            this.dtpFechaApertura = new System.Windows.Forms.DateTimePicker();
             this.dgvCuentas = new System.Windows.Forms.DataGridView();
             this.gboxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
@@ -79,6 +79,25 @@
             this.gboxClientes.TabStop = false;
             this.gboxClientes.Text = "DATOS CUENTAS";
             // 
+            // dtpFechaApertura
+            // 
+            this.dtpFechaApertura.Location = new System.Drawing.Point(639, 124);
+            this.dtpFechaApertura.Name = "dtpFechaApertura";
+            this.dtpFechaApertura.Size = new System.Drawing.Size(200, 31);
+            this.dtpFechaApertura.TabIndex = 21;
+            // 
+            // cboxTipoCuenta
+            // 
+            this.cboxTipoCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
+            this.cboxTipoCuenta.FormattingEnabled = true;
+            this.cboxTipoCuenta.Items.AddRange(new object[] {
+            "Ahorro",
+            "Corriente"});
+            this.cboxTipoCuenta.Location = new System.Drawing.Point(183, 167);
+            this.cboxTipoCuenta.Name = "cboxTipoCuenta";
+            this.cboxTipoCuenta.Size = new System.Drawing.Size(182, 30);
+            this.cboxTipoCuenta.TabIndex = 20;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,6 +112,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
@@ -238,25 +258,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo Cuenta:";
             // 
-            // cboxTipoCuenta
-            // 
-            this.cboxTipoCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
-            this.cboxTipoCuenta.FormattingEnabled = true;
-            this.cboxTipoCuenta.Items.AddRange(new object[] {
-            "Ahorro",
-            "Corriente"});
-            this.cboxTipoCuenta.Location = new System.Drawing.Point(183, 167);
-            this.cboxTipoCuenta.Name = "cboxTipoCuenta";
-            this.cboxTipoCuenta.Size = new System.Drawing.Size(182, 30);
-            this.cboxTipoCuenta.TabIndex = 20;
-            // 
-            // dtpFechaApertura
-            // 
-            this.dtpFechaApertura.Location = new System.Drawing.Point(639, 124);
-            this.dtpFechaApertura.Name = "dtpFechaApertura";
-            this.dtpFechaApertura.Size = new System.Drawing.Size(200, 31);
-            this.dtpFechaApertura.TabIndex = 21;
-            // 
             // dgvCuentas
             // 
             this.dgvCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -281,6 +282,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCuentas";
             this.Text = "FrmCuentas";
+            this.Load += new System.EventHandler(this.FrmCuentas_Load);
             this.gboxClientes.ResumeLayout(false);
             this.gboxClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).EndInit();
